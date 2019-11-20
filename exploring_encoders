@@ -1,0 +1,20 @@
+#include <PRIZM.h>    // Include PRIZM Library
+
+PRIZM prizm;          // Instantiate an object named prizm
+
+void setup() {
+
+  prizm.PrizmBegin(); // Initiates the PRIZM controller - must be called in the setup of each PRIZM sketch
+  
+  Serial.begin(9600);
+
+}
+
+void loop() {
+
+  prizm.setMotorSpeed(1,600);       // Spin DC motor 1 at a constant 200 degrees per second rate 360 degrees and stop. 
+
+  Serial.print(prizm.readEncoderCount(1));
+  Serial.print("\n");
+  
+}
